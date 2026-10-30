@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Stock Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Shop Stock Board</h1>
+
+  <!-- Filter & Action Buttons -->
+  <div class="buttons">
+    <button id="btn-all">All</button>
+    <button id="btn-in-stock">In Stock</button>
+    <button id="btn-cheap">Cheap</button>
+    <button id="btn-expensive">Expensive</button>
+    <button id="btn-sort">Sort</button>
+    <button id="btn-discount">Discount 10%</button>
+    <button id="btn-reset" class="danger">Reset</button>
+  </div>
+
+  <!-- Bonus: Category filter -->
+  <div class="category-filter">
+    <label for="categorySelect">Category: </label>
+    <select id="categorySelect">
+      <option value="">-- All categories --</option>
+      <option value="electronics">electronics</option>
+      <option value="clothes">clothes</option>
+      <option value="food">food</option>
+    </select>
+  </div>
+
+  <!-- Product List -->
+  <ul id="product-list"></ul>
+
+  <!-- Summary -->
+  <div class="summary">
+    <p>Number of products shown: <strong id="count">0</strong></p>
+    <p>Total stock value: <strong id="total-value">0</strong> EGP</p>
+    <p>Status: <strong id="status">No products</strong></p>
+    <p>Most expensive: <strong id="most-expensive">-</strong></p>
+  </div>
+
+  <!-- Add Product Form -->
+  <div class="form-section">
+    <h2>Add New Product</h2>
+    <form id="add-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Product name">
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="">-- Choose category --</option>
+          <option value="electronics">electronics</option>
+          <option value="clothes">clothes</option>
+          <option value="food">food</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" placeholder="Price" min="1" step="1">
+      </div>
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input type="number" id="stock" placeholder="Stock" min="0" max="1000" step="1">
+      </div>
+      <button type="submit" class="success">Add Product</button>
+      <p id="error-message"></p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
